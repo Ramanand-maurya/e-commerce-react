@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { React,createContext, useReducer } from "react";
 import { cartAction } from "../constants";
 export const CartContext = createContext();
 
@@ -12,7 +12,6 @@ function cartMethods(cart, action) {
       return cart;
   }
 }
-
 export function CartProvider({ children }) {
   const [cart, cartDispatch] = useReducer(cartMethods, []);
   const value = { cart, cartDispatch };

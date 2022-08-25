@@ -1,7 +1,10 @@
+import "./css/fontawesome.css";
+import React from "react";
+import "./css/slick.css";
+import "./css/bootstrap.min.css";
 import "./styles.css";
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar";
-import Banner from "./Components/Banner";
 import LandingPage from "./Pages/LandingPage";
 import ProductsDisplay from "./Pages/ProductsDisplay";
 import WishlistPage from "./Pages/WishlistPage";
@@ -12,27 +15,41 @@ import { WishlistProvider } from "./Context/WishlistContext";
 import { FeedbackProvider } from "./Context/FeedbackContext";
 import Feedback from "./Components/Feedback";
 import { FilterProvider } from "./Context/FilterContext";
+import Footer from "./Components/Footer";
+import Login from "./Pages/login";
+import Checkout from "./Pages/checkout";
+import ProtecteRoutes from "./Components/ProtecteRoutes";
+import BlogDetail from "./Components/BlogDetail";
+import GoToTop from './Components/GoToTop';
+import Register from "./Pages/Register";
 
 export default function App() {
   return (
     <div className="App">
+      <GoToTop />
       <DataProvider>
-        <Navbar />
-        <Banner />
         <CartProvider>
           <WishlistProvider>
             <FeedbackProvider>
               <FilterProvider>
+                <Navbar />
                 <Feedback />
                 <Routes>
-                  <Route path="/" element={<LandingPage />} />
-                  <Route
+                  <Route exact path="/" element={<LandingPage />} />
+                  <Route exact path="/login" element={<Login />} />
+                  <Route exact path="/register" element={<Register />} />
+                  <Route exact element={<ProtecteRoutes />}>
+                    <Route element={<Checkout />} path="/checkout" exact />
+                  </Route>
+                  <Route exact
                     path="/products/:category"
                     element={<ProductsDisplay />}
                   />
-                  <Route path="wishlist" element={<WishlistPage />} />
-                  <Route path="cart" element={<CartPage />} />
+                  <Route exact path="/BlogDetail/:blogId" element={<BlogDetail />} />
+                  <Route exact path="/wishlist" element={<WishlistPage />} />
+                  <Route exact path="/cart" element={<CartPage />} />
                 </Routes>
+                <Footer />
               </FilterProvider>
             </FeedbackProvider>
           </WishlistProvider>

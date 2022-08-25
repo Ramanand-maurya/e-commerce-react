@@ -1,23 +1,31 @@
 .ProductCard {
-    width: 210px;
-    overflow: hidden;
-    margin-bottom: 100px;
     box-sizing: border-box;
+    transition: box-shadow .3s ease-in-out;
+    transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    border: 1px solid #e5e5e5;
+    margin: 4px 0 64px;
+    position: relative;
   }
+
   .Product-image {
     width: 100%;
   }
   .Product-info {
-    position: relative;
-    padding: 0 10px;
+    padding: 0 15px;
+    position: static;
+    width: 100%;
     text-align: left;
+    overflow: hidden;
+    min-height: 100px;
+    padding: 20px 15px;
   }
   .Product-brand {
     font-size: 16px;
     font-weight: 600;
     line-height: 1;
     color: #282c3f;
-    margin-bottom: 6px;
+    margin-bottom: 12x;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -50,16 +58,43 @@
     font-size: 12px;
   }
   .Product-discountPercent {
-    color: #ff905a;
+    color: #f7d929;
     font-weight: 300;
     font-size: 12px;
     margin-left: 5px;
   }
+  .ProductCard-body{
+    position: relative;
+    vertical-align: top;
+    clear: both;
+    overflow: visible;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    transition: box-shadow .3s ease-in-out;
+    transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+  }
+  .ProductCard:hover .ProductCard-body{
+    float: left;
+    width: 100%;
+    position: relative;
+    margin-bottom: -53px;
+    z-index: 999;
+    padding-bottom: 53px;
+    background-color: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 8px 0 rgb(0 0 0 / 10%);
+    -moz-box-shadow: 0 0 8px 0 rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 0 8px 0 rgb(0 0 0 / 10%);
+  }
   .Product-actions {
     position: absolute;
-    top: -100%;
+    bottom: 0px;
     left: 0;
-    padding: 10px 0;
+    padding-top: 0;
+    padding-bottom: 15px;
     width: 100%;
     background-color: #fff;
     opacity: 0;
@@ -77,17 +112,18 @@
     outline: 0;
     border: none;
     font-family: "Roboto", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     padding: 9px 15px;
-    line-height: 1;
     text-align: center;
     transition: all 0.3s;
   }
   .Button-cart {
-    color: rgb(27, 28, 29);
-    border: 1 solid rgb(27, 28, 29);
-    box-shadow: rgb(27, 28, 29) 0px 0px 0px 1px inset;
+    color: #222;
+    background-color: #f7d929;
+    border-radius: 20px;
+    max-width: 180px;
+    width: 100%;
   }
   .Button-cart:hover {
     background-color: rgb(27, 28, 29);
@@ -95,8 +131,15 @@
   }
   .Button-wishlist {
     color: red;
-    border: 1 solid red;
+    border: 1px solid red;
+    position: absolute;
+    top: 10px;
+    opacity: 0;
+    right: 10px;
     box-shadow: red 0px 0px 0px 1px inset;
+  }
+  .ProductCard:hover .Button-wishlist{
+    opacity: 1;
   }
   .Button-wishlist:hover {
     background: red;

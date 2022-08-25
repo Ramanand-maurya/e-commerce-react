@@ -1,6 +1,6 @@
 import "../Styles/FilterSidebar.css";
 import { FilterContext } from "../Context/FilterContext";
-import { useContext } from "react";
+import {React, useContext } from "react";
 import { DataContext } from "../Context/DataContext";
 export default function FilterSideBar({ displayFilters }) {
   const { updateCategories, updateBrands } = useContext(FilterContext);

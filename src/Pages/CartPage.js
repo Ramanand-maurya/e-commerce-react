@@ -1,10 +1,11 @@
+import React from "react";
 import "../Styles/CartPage.css";
 import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
 import CartItemCard from "../Components/CartItemCard";
-import Footer from "../Components/Footer";
 import getTotalDiscount from "../helpers/getTotalDiscount";
 import sumValueArrayOfObjects from "../helpers/sumValueArrayOfObjects";
+import Banner from "../Components/banner";
 export default function CartPage() {
   const { cart } = useContext(CartContext);
   const cartTotal = sumValueArrayOfObjects(cart, "price");
@@ -13,6 +14,7 @@ export default function CartPage() {
   discountedTotal = discountedTotal ? discountedTotal.toFixed(2) : 0;
   return (
     <>
+    <Banner pageHeding="My Cart" accountlink="/cart" linkName1="Shopping Cart" thispagelink="/cart" linkName2="Cart" />
       <section className="Cart-container">
         <div className="Cart-products">
           <div className="Cart-products-title">
@@ -21,8 +23,8 @@ export default function CartPage() {
           </div>
           <div className="Cart-items-container">
             {cart.length === 0 ? <h3>Cart Empty</h3> : ""}
-            {cart.map((item) => (
-              <CartItemCard id={item.id} item={item} />
+            {cart.map((item,ind) => (
+              <CartItemCard key={ind} id={item.id} item={item} />
             ))}
           </div>
         </div>
@@ -65,7 +67,6 @@ export default function CartPage() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import React from "react";
 import "../Styles/CartItemCard.css";
 import { CartContext } from "../Context/CartContext";
 import { WishlistContext } from "../Context/WishlistContext";

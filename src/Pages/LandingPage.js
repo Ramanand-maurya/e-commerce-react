@@ -1,9 +1,118 @@
-import Footer from "../Components/Footer";
+import React from "react";
 import { Link } from "react-router-dom";
+import HomeSlider from "../Components/HomeSlider";
 import "../Styles/LandingPage.css";
+import Delivery from "../Components/delivery";
+import LandingProduct from "../Components/landiinPageProduct";
+import DealCounter from "../Components/DealCounter";
+import BrandMarquee from "../Components/BrandMarquee";
+import BlogSlider from "../Components/BlogSlider";
 export default function LandingPage() {
+  
   return (
     <>
+    <HomeSlider />
+    <Delivery />
+    <LandingProduct />
+    <div className="poster-img">
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div className="wapper-img">
+              <a href="">
+                <img src="/images/offer-poster.jpg" alt="poster" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <LandingProduct />
+    <DealCounter />
+
+    {/* cmbanner-block */}
+    <div className="cmbanner-block">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+          <div class="cms_img">
+            <a href="" class="banner">
+            <img class="cms_image1" src="images/banner-block.jpg" alt="" />
+            </a>
+            <div class="description">
+              <div class="title">Starting At Only $5,500</div>
+              <div class="subtitle">Brand Laptop</div>
+              <a href="" title="shop-button">
+              <button type="button" class="shop_button">Shop Now</button>
+              </a>
+            </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+          <div class="cms_img">
+            <a href="" class="banner">
+            <img class="cms2_image2" src="images/banner-block-1.jpg" alt="" />
+            </a>
+            <div class="description">
+              <div class="title">Starting At Only $5,500</div>
+              <div class="subtitle">casual shoes</div>
+              <a href="" title="shop-button">
+              <button type="button" class="shop_button">Shop Now</button>
+              </a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <BrandMarquee />
+    {/* ShoppingGadgets */}
+    <div className="ShoppingGadgets">
+      <div className="ShoppingGadgets-block">
+        <div className="container">
+          <div className="row">
+          <div className="col-md-6">
+            <div className="main-Gadgets">
+            <div class="cms_image">
+              <a href="">
+                <img class="cms_image1" src="images/banner-block-2.jpg" alt="" />
+              </a>
+            </div>
+            <div class="description">
+            <div class="title">Shopping Gadgets</div>
+            <div class="desc">
+            Contrary to popular belief, Lorem Ipsum is not simply dummy text. It roots in a piece of classical Latin literature45 BC, making it ov 2000 years old. dummy text
+            </div>
+            <a href="" title="read-button">
+              <button type="button" class="cm_button">Read More</button>
+            </a>
+            </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+          <div className="main-Gadgets">
+            <div class="cms_image">
+              <a href="">
+                <img class="cms_image1" src="images/banner-block-3.jpg" alt="" />
+              </a>
+            </div>
+            <div class="description">
+            <div class="title">Shopping Gadgets</div>
+            <div class="desc">
+            Contrary to popular belief, Lorem Ipsum is not simply dummy text. It roots in a piece of classical Latin literature45 BC, making it ov 2000 years old. dummy text
+            </div>
+            <a href="" title="read-button">
+              <button type="button" class="cm_button">Read More</button>
+            </a>
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+      <BlogSlider />
       <div className="gutter" />
       <h4 className="LandingPage-heading">Explore Top Brands For Mens</h4>
       <div className="LandingPage-container">
@@ -122,7 +231,8 @@ export default function LandingPage() {
           />
         </div>
       </div>
-      <Footer />
     </>
   );
 }
+
+

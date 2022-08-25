@@ -1,12 +1,14 @@
-import Footer from "../Components/Footer";
+import React from "react";
 import "../Styles/WishlistPage.css";
 import ProductCard from "../Components/ProductCard";
 import { WishlistContext } from "../Context/WishlistContext";
 import { useContext } from "react";
+import Banner from "../Components/banner";
 export default function WishlistPage() {
   const { wishlist } = useContext(WishlistContext);
   return (
     <>
+    <Banner pageHeding="Wishlist" accountlink="/" thispagelink="/Wishlist" linkName1="Shopping Wish List" linkName2="Wish List" />
       <div className="Wishlist-title">
         <div className="Wishlist-title-container">
           <h1>My Wishlist</h1>
@@ -25,7 +27,6 @@ export default function WishlistPage() {
           ))}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

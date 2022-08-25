@@ -1,3 +1,4 @@
+import React, { Fragment } from 'react';
 import { createContext, useEffect, useState } from "react";
 import { API } from "../constants";
 import axios from "axios";
@@ -16,6 +17,7 @@ export function DataProvider({ children }) {
       }
       const response = await axios.get(`${API}/products/${currentCategory}`);
       setProducts(response.data.products);
+      console.log(response.data.products[0].image);
       setBrands(response.data.brands);
     }
     fetchProducts();

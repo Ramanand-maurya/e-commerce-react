@@ -1,5 +1,5 @@
 import "../Styles/ProductCard.css";
-import { useContext } from "react";
+import { React,useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 import { FeedbackContext } from "../Context/FeedbackContext";
 import { cartAction, wishlistAction } from "../constants";
@@ -45,10 +45,7 @@ export default function ProductCard({ inWishlist, product }) {
       <div className="ProductCard">
         <div className="ProductCard-body">
           <img className="Product-image" src={product.image} alt="" />
-          <div className="Product-info">
-            <div className="Product-actions">
-              <div className="Action-Buttons">
-                <button
+          <button
                   onClick={handleWishlistActions}
                   className="Action-button Button-wishlist"
                 >
@@ -58,15 +55,7 @@ export default function ProductCard({ inWishlist, product }) {
                     }`}
                   ></i>
                 </button>
-                &nbsp;
-                <button
-                  onClick={handleCartActions}
-                  className="Action-button Button-cart"
-                >
-                  {isProductInCart ? "Remove From Cart" : "Add to Cart"}
-                </button>
-              </div>
-            </div>
+          <div className="Product-info">
             <h3 className="Product-brand">{product.brand}</h3>
             <h4 className="Product-name">{product.name}</h4>
             <div className="Product-price">
@@ -79,6 +68,17 @@ export default function ProductCard({ inWishlist, product }) {
               <span className="Product-discountPercent">
                 ({product.discount}% OFF)
               </span>
+            </div>
+            <div className="Product-actions">
+              <div className="Action-Buttons">
+                &nbsp;
+                <button
+                  onClick={handleCartActions}
+                  className="Action-button Button-cart"
+                >
+                  {isProductInCart ? "Remove From Cart" : "Add to Cart"}
+                </button>
+              </div>
             </div>
           </div>
         </div>

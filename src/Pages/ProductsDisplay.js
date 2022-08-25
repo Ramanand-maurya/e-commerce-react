@@ -1,10 +1,10 @@
+import React from "react";
 import ProductCard from "../Components/ProductCard";
 import useToggleState from "../customHooks/useToggleState";
 import FilterSideBar from "../Components/FilterSideBar";
 import { FilterContext } from "../Context/FilterContext";
 import "../Styles/ProductsDisplay.css";
 import { useContext } from "react";
-import Footer from "../Components/Footer";
 import Loader from "../Components/Loader";
 import { DataContext } from "../Context/DataContext";
 
@@ -51,7 +51,6 @@ export default function ProductsDisplay(props) {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
